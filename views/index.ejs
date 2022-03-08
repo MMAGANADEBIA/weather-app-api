@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header">
+    <h1>Weather app api</h1>
+    <a href="https://github.com/MMAGANADEBIA/MMAGANADEBIA" target="_blank"> MMAGANADEBIA github.</a>
+  </header>
+  <div id="content">
+
+    <div>
+      <h3>Tiempo actual</h3>
+    </div>
+
+    <div id="icon">
+      <img id="weatherIcon" src="./assets/images/<%= weather.currently.icon %>.png">
+    </div>
+
+    <div id="temperature">
+      <p>
+        Temperatura: <%= weather.currently.temperature %>°C
+      </p>
+    </div>
+
+    <div id="summary">
+      <p>
+        Tiempo: <%= weather.currently.summary %>
+      </p>
+    </div>
+
+    <div id="aparentTemperature">
+      <p>
+        Tamperatura aparente: <%= weather.currently.apparentTemperature %>°C
+      </p>
+    </div>
+
+    <div id="currentlyWeatherExtras">
+
+      <div id="windSpeedInfo" class="extras">
+        <div class="extraContent">
+          <img src="./assets/images/wind-signal.png" class="imagesExtras">
+          <p>
+            <%= weather.currently.windSpeed %> km/h
+          </p>
+          <p>Velocidad del viento</p>
+        </div>
+      </div>
+
+      <div id="humidityInfo" class="extras">
+        <div class="extraContent">
+          <img src="./assets/images/humidity.png" alt="" class="imagesExtras">
+          <p>
+            <%= weather.currently.humidity %> %
+          </p>
+          <p>Humedad</p>
+        </div>
+      </div>
+
+      <div id="precipitationInfo" class="extras">
+        <div class="extraContent">
+          <img src="./assets/images/precipitation.png" alt="" class="imagesExtras">
+          <p>
+            <%= weather.currently.precipProbability %> %
+          </p>
+          <p>Probabilidad de precipitación</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Daily -->
+    <div id="dailyContent">
+      <h3>Tiempo semanal</h3>
+      <div id="dailyContentSummary">
+        <img src="./assets/images/<%= weather.daily.icon %>.png" id="dailyIcon">
+        <p id="dailySummary">
+          <%= weather.daily.summary %>
+        </p>
+        <!-- Daily Content-->
+        <div id="dailyContainer">
+          <%weather.daily.data.forEach((index)=>{%>
+            <div id="dailyCircle">
+              <div id="dailyCircleContent">
+                <img src="./assets/images/<%=index.icon%>.png" class="imagesExtras">
+                <p>
+                  <%= index.summary %>
+                </p>
+                <p>
+                  <%= index.temperatureHigh %>
+                </p>
+                <p>
+                  <%= index.temperatureLow %>
+                </p>
+              </div>
+            </div>
+            <%});%>
+        </div>
+
+        <!-- Daily Content-->
+      </div>
+
+
+    </div>
+    <!-- Daily -->
+
+  </div>
+  <!-- Content -->
+
+  <footer id="footer">
+    <div id="footerContent">
+      <a href="https://darksky.net/poweredby/"> Powered by Dark Sky</a>
+      <div id="icons-used">
+        <p>icons used:</p>
+        <ul>
+          <li><a href="https://www.flaticon.com/free-icons/clear">Clear icons by Freepik</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/weather">Weather icons by iconixa</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/weather">Weather icons by Freepik</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/day">Day icons by torskaya</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/snow">Snow icons by Freepik</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/sleet">Sleet icons by Freepik</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/wind">Wind icons by max.icons</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/fog">Fog icons by Freepik</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/cloud">Cloud icons by Freepik</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/weather">Weather icons by seticon</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/wind-signal">Wind signal icons by Freepik</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/precipitation">Precipitation icons by Freepik</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
