@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./assets/css/getLocation.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>Weather app api</h1>
+      <a href="https://github.com/MMAGANADEBIA/MMAGANADEBIA" target="_blank"> MMAGANADEBIA github.</a> <br>
+      <a href="https://github.com/MMAGANADEBIA/weather-app-api" target="_blank"> app repo.</a>
+    </div>
+  </header>
+
+  <div id="instructions">
+    <h3>Localización</h3>
+    <br>
+    <div id="localizationInstruction">
+      <p>Para obtener el estado del clima en tu ciudad, primero acepta la petición de ubicación.</p>
+      <p>Luego de obtener la información en los campos de abajo, da click en continuar.</p>
+    </div>
+  </div>
+  <div>
+    <form method="post" action="/index" name="geoForm" id="form">
+      <div id="informationContainer">
+        <div id="locationInputs">
+          <input type="number" name="latitude" id="latitude" value="" placeholder="latitude" readonly>
+          <input type="number" name="longitude" id="longitude" value="" placeholder="longitude" readonly>
+        </div>
+        <div id="buttonContainer">
+          <button type="button" id="getLocation">Continuar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="./assets/scripts/getLocation.js"></script>
+</body>
+
+</html>

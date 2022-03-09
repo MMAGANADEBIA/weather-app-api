@@ -3,8 +3,9 @@ const bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 const router = express.Router();
 
-const { index } = require('../../controllers/user.js');
+const { getLocation, index } = require('../../controllers/user.js');
 
-router.get('/', index);
+router.get('/', getLocation);
+router.post('/index', urlencodedParser, index);
 
 module.exports = router;
