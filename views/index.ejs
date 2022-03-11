@@ -5,6 +5,7 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./assets/images/<%= weather.currently.icon %>.png">
   <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -86,9 +87,10 @@
         </p>
         <!-- Daily Content-->
         <div id="dailyContainer">
-          <%weather.daily.data.forEach((index)=>{%>
+          <%weather.daily.data.forEach((index, i)=>{%>
             <div id="dailyCircle">
               <div id="dailyCircleContent">
+                <p id="day<%=i%>"></p>
                 <img src="./assets/images/<%=index.icon%>.png" class="imagesExtras">
                 <p>
                   <%= index.summary %>
@@ -103,11 +105,8 @@
             </div>
             <%});%>
         </div>
-
         <!-- Daily Content-->
       </div>
-
-
     </div>
     <!-- Daily -->
 
@@ -138,7 +137,7 @@
 
   </footer>
 
-  <!-- <script src="./assets/scripts/index.js"></script> -->
+  <script src="./assets/scripts/index.js"></script>
 </body>
 
 </html>

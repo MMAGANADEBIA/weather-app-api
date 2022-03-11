@@ -80,16 +80,16 @@ button{
   text-align: center;
 }
 
-input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{
+input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type="number"]{
-  -moz-appearance: texfield; 
+input{
+  -moz-appearance: textfield; 
 }
 
-input[type="number"]:hover,input[type="number"]:focus{
+input:hover,input:focus{
   -moz-appearance: number-input;
 }
 
