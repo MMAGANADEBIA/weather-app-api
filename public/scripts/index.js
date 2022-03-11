@@ -1,6 +1,5 @@
 let date = new Date();
 let weekday = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
-// let day = weekday[date.getDay()];
 
 let day0 = document.querySelector('#day0');
 let day1 = document.querySelector('#day1');
@@ -18,9 +17,6 @@ function first() {
   let canChange = false;
   for (let i = 0; i < 8; i++) {
     if (weekday[date.getDay() + (i + 1)]) {
-      // window['day' + i].innerHTML = weekday[date.getDay() + (i + 1)];
-      // eval("day+i.innerHTML = weekday[date.getDay() + (i+1)]");
-      // eval("let day" + i + "=document.querySelector('#day" + i + "')");
       let toDay = eval("day" + i);
       toDay.innerHTML = weekday[date.getDay() + (i + 1)];
       console.log("nextWeek");
@@ -38,7 +34,6 @@ function first() {
 function nextWeek(n) {
   let nw = 0;
   for (n; n < 8; n++) {
-    // window['day' + n].innerHTML = weekday[nw];
     let toNextW = eval("day" + n);
     toNextW.innerHTML = weekday[nw];
     nw++;
